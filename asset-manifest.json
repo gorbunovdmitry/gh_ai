@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gh_ai/static/css/main.283bd8d4.css",
+    "main.js": "/gh_ai/static/js/main.aebc66cd.js",
+    "index.html": "/gh_ai/index.html",
+    "main.283bd8d4.css.map": "/gh_ai/static/css/main.283bd8d4.css.map",
+    "main.aebc66cd.js.map": "/gh_ai/static/js/main.aebc66cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.283bd8d4.css",
+    "static/js/main.aebc66cd.js"
+  ]
+}

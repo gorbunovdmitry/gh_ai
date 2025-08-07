@@ -27,14 +27,25 @@ async function getSheetsClient() {
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_API_KEY;
 
-const SYSTEM_PROMPT = '';
+// Загрузка системных промптов
+const stereotypesPrompt = require('./prompts/stereotypes');
+const inversionPrompt = require('./prompts/inversion');
+const transferPrompt = require('./prompts/transfer');
 
-app.post('/api/chat', async (req, res) => {
+const prompts = {
+  stereotypes: stereotypesPrompt,
+  inversion: inversionPrompt,
+  transfer: transferPrompt
+};
+
+app.post('/api/chat/:assistantType', async (req, res) => {
+  const { assistantType } = req.params;
   const userMessage = req.body.message;
   const promptCount = req.body.promptcount;
   if (!userMessage) return res.status(400).json({ reply: 'Нет сообщения' });
 
-  const fullPrompt = userMessage;
+  const systemPrompt = prompts[assistantType] || '';
+  const fullPrompt = systemPrompt ? `${systemPrompt}\n\n${userMessage}` : userMessage;
 
   let aiReply = '';
   try {
@@ -56,9 +67,9 @@ app.post('/api/chat', async (req, res) => {
     const sheets = await getSheetsClient();
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
-      range: 'A:D',
+      range: 'A:E',
       valueInputOption: 'RAW',
-      requestBody: { values: [[dateTimeStr, promptCount, userMessage, aiReply]] },
+      requestBody: { values: [[dateTimeStr, promptCount, assistantType, userMessage, aiReply]] },
     });
   } catch (e) {
     console.error('Sheets error:', e?.response?.data || e.message);

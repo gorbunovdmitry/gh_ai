@@ -137,11 +137,9 @@ function App() {
       <div className={"chat-window" + (messages.length === 0 && !loading ? " empty" : "")} ref={chatWindowRef}>
         {messages.length === 0 && !loading && (
           <div className="placeholder-message">
-            Я - ИИ-ассистент.
+            Привет! Я - ИИ-ассистент.
             {"\n"}
-            Если у вас есть вопросы по ЖКУ, постараюсь вам помочь.
-            {"\n"}
-            Пожалуйста, не указывайте ФИО, номер счета и другие личные данные.
+            Задавайте любые вопросы, и я постараюсь вам помочь.
           </div>
         )}
         {messages.map((msg, i) => (

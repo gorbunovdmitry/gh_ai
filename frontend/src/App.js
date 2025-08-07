@@ -86,7 +86,7 @@ function App() {
 
   useEffect(() => {
     // Событие первого рендера
-    sendAnalyticsEvent('5640_page_view');
+    sendAnalyticsEvent('GHShturm_page_view');
   // eslint-disable-next-line
   }, []);
 
@@ -124,11 +124,11 @@ function App() {
       ]);
     }
     setLoading(false);
-    sendAnalyticsEvent('5640_click_send');
+    sendAnalyticsEvent('GHShturm_click_send');
   };
 
   if (limitReached) {
-    sendAnalyticsEvent('5640_end_page_view');
+    sendAnalyticsEvent('GHShturm_end_page_view');
     return <LimitPage />;
   }
 

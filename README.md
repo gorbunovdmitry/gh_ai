@@ -93,10 +93,20 @@ cd <your-project-name>
 
 2. Обновите `REACT_APP_BACKEND_URL` в `.env` на URL вашего backend
 
-3. Деплой:
+3. Настройте GitHub Pages в настройках репозитория:
+   - Source: "Deploy from a branch"
+   - Branch: `gh-pages`
+   - Folder: `/ (root)`
+
+4. Ручной деплой:
    ```bash
    cd frontend
-   npm run deploy
+   npm run build
+   git checkout gh-pages
+   cp -r build/* .
+   git add .
+   git commit -m "Update deployment"
+   git push origin gh-pages
    ```
 
 ## 📁 Структура проекта

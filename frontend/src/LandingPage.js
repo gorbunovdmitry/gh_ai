@@ -4,6 +4,8 @@ import './Chat.css';
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  
+  console.log('LandingPage rendered');
 
   useEffect(() => {
     // Аналитика для главной страницы
@@ -28,9 +30,28 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="landing-container">
-      <div className="landing-content">
-        <div className="landing-message">
+    <div style={{
+      minHeight: '100vh',
+      background: '#fafafa',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      fontFamily: 'Roboto, Arial, sans-serif'
+    }}>
+      <div style={{
+        maxWidth: '600px',
+        width: '100%',
+        textAlign: 'center'
+      }}>
+        <div style={{
+          color: '#222',
+          fontSize: '24px',
+          lineHeight: '1.6',
+          marginBottom: '40px',
+          whiteSpace: 'pre-line',
+          fontWeight: '500'
+        }}>
           Приветствую тебя, участник штурма!
           {"\n\n"}
           Эти три ассистента помогут тебе нагенерить самые голововзрывающие идеи!
@@ -38,23 +59,65 @@ export default function LandingPage() {
           Слушай ведущего и дерзай!
         </div>
         
-        <div className="assistants-grid">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr',
+          gap: '20px',
+          maxWidth: '400px',
+          margin: '0 auto'
+        }}>
           <button 
-            className="assistant-button"
+            style={{
+              padding: '20px 24px',
+              border: 'none',
+              borderRadius: '16px',
+              background: '#EF3124',
+              color: '#fff',
+              fontSize: '18px',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'Roboto, Arial, sans-serif',
+              boxShadow: '0 4px 12px rgba(239, 49, 36, 0.3)'
+            }}
             onClick={() => handleAssistantClick('stereotypes')}
           >
             Ассистент по стереотипам
           </button>
           
           <button 
-            className="assistant-button"
+            style={{
+              padding: '20px 24px',
+              border: 'none',
+              borderRadius: '16px',
+              background: '#EF3124',
+              color: '#fff',
+              fontSize: '18px',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'Roboto, Arial, sans-serif',
+              boxShadow: '0 4px 12px rgba(239, 49, 36, 0.3)'
+            }}
             onClick={() => handleAssistantClick('inversion')}
           >
             Ассистент по инверсии
           </button>
           
           <button 
-            className="assistant-button"
+            style={{
+              padding: '20px 24px',
+              border: 'none',
+              borderRadius: '16px',
+              background: '#EF3124',
+              color: '#fff',
+              fontSize: '18px',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+              fontFamily: 'Roboto, Arial, sans-serif',
+              boxShadow: '0 4px 12px rgba(239, 49, 36, 0.3)'
+            }}
             onClick={() => handleAssistantClick('transfer')}
           >
             Ассистент по переносу

@@ -42,11 +42,11 @@ export default function LandingPage() {
       <div style={{
         maxWidth: '600px',
         width: '100%',
-        textAlign: 'center'
+        textAlign: 'left'
       }}>
         <div style={{
           color: '#222',
-          fontSize: '24px',
+          fontSize: '22px',
           lineHeight: '1.6',
           marginBottom: '40px',
           whiteSpace: 'pre-line',

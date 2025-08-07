@@ -5,8 +5,10 @@ import ChatPage from './ChatPage';
 import './Chat.css';
 
 function App() {
+  console.log('App rendered, current pathname:', window.location.pathname);
+  
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/gh_ai">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/stereotypes" element={<ChatPage />} />

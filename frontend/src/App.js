@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chat.css';
-import LimitPage from './LimitPage';
 
 function formatAIText(text) {
   // Заменяем **жирный** и *курсив* и \n на переносы строк, а также списки
@@ -22,13 +21,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [dots, setDots] = useState(1);
 
-  const LIMIT = 5;
-  const [questionCount, setQuestionCount] = useState(
-    Number(localStorage.getItem('questionCount') || 0)
-  );
-  const [limitReached, setLimitReached] = useState(
-    localStorage.getItem('limitReached') === '1'
-  );
+  const [questionCount, setQuestionCount] = useState(0);
 
   const chatWindowRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -92,7 +85,7 @@ function App() {
 
   const sendMessage = async (e) => {
     e.preventDefault();
-    if (!input.trim() || limitReached) return;
+    if (!input.trim()) return;
     const userMsg = { sender: 'user', text: input };
     setMessages((msgs) => [...msgs, userMsg]);
     setInput('');
@@ -100,11 +93,6 @@ function App() {
 
     const newCount = questionCount + 1;
     setQuestionCount(newCount);
-    localStorage.setItem('questionCount', newCount);
-    if (newCount >= LIMIT) {
-      setLimitReached(true);
-      localStorage.setItem('limitReached', '1');
-    }
 
     try {
       const res = await fetch((process.env.REACT_APP_BACKEND_URL || 'http://localhost:5002') + '/api/chat', {
@@ -127,19 +115,14 @@ function App() {
     sendAnalyticsEvent('GHShturm_click_send');
   };
 
-  if (limitReached) {
-    sendAnalyticsEvent('GHShturm_end_page_view');
-    return <LimitPage />;
-  }
-
   return (
     <div className="chat-container" ref={chatContainerRef}>
       <div className={"chat-window" + (messages.length === 0 && !loading ? " empty" : "")} ref={chatWindowRef}>
         {messages.length === 0 && !loading && (
           <div className="placeholder-message">
-            Привет! Я - ИИ-ассистент.
+            Я AI-помощник самой крутой команды GH всея Руси.
             {"\n"}
-            Задавайте любые вопросы, и я постараюсь вам помочь.
+            Я здесь для того, чтобы дизраптить, челленджить, находить новые инсайты.
           </div>
         )}
         {messages.map((msg, i) => (

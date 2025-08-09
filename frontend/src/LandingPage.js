@@ -59,7 +59,7 @@ function LandingPage() {
               Лояльность
             </div>
             
-            {/* Growth Штурм - меньше размер и отступ */}
+            {/* Growth Штурм - с неразрывным пробелом */}
             <h1 style={{
               color: 'white',
               fontSize: '42px',
@@ -67,10 +67,10 @@ function LandingPage() {
               margin: '0 0 8px 0',
               lineHeight: '1'
             }}>
-              Growth Штурм
+              Growth&nbsp;Штурм
             </h1>
             
-            {/* ИИ-помощник - меньше размер и отступ */}
+            {/* ИИ-ПОМОЩНИК - верхний регистр с пробелами */}
             <div style={{
               background: '#28301D',
               color: '#7ED016',
@@ -81,19 +81,20 @@ function LandingPage() {
               display: 'inline-block',
               margin: '0'
             }}>
-              ИИ-помощник
+              &nbsp;ИИ-ПОМОЩНИК&nbsp;
             </div>
           </div>
           
-          {/* Картинка god - левее, ближе к тексту */}
+          {/* Картинка god - увеличена в 2 раза и чуть ниже */}
           <img 
             src="/gh_ai/img/god.png" 
             alt="Бог в помощь" 
             style={{
-              width: '80px',
-              height: '80px',
+              width: '160px',
+              height: '160px',
               objectFit: 'contain',
-              marginLeft: '40px'
+              marginLeft: '40px',
+              marginTop: '20px'
             }}
             onError={(e) => {
               console.log('Ошибка загрузки изображения god.png');
@@ -117,13 +118,13 @@ function LandingPage() {
           gap: '20px'
         }}>
           
-          {/* Стереотипы */}
+          {/* Стереотипы - уменьшена высота на 20px */}
           <div 
             onClick={() => handleAssistantClick('stereotypes')}
             style={{
               background: '#28301D',
               borderRadius: '16px',
-              padding: '24px 10px',
+              padding: '14px 10px',
               cursor: 'pointer',
               display: 'flex',
               justifyContent: 'space-between',
@@ -156,7 +157,8 @@ function LandingPage() {
                 color: 'white',
                 padding: '8px 12px',
                 borderRadius: '16px',
-                fontSize: '12px',
+                fontSize: '10px',
+                fontWeight: 'bold',
                 display: 'inline-block',
                 fontFamily: 'Inter, Arial, sans-serif'
               }}>
@@ -191,13 +193,13 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Инверсия */}
+          {/* Инверсия - уменьшена высота на 20px */}
           <div 
             onClick={() => handleAssistantClick('inversion')}
             style={{
               background: '#28301D',
               borderRadius: '16px',
-              padding: '24px 10px',
+              padding: '14px 10px',
               cursor: 'pointer',
               display: 'flex',
               justifyContent: 'space-between',
@@ -230,7 +232,8 @@ function LandingPage() {
                 color: 'white',
                 padding: '8px 12px',
                 borderRadius: '16px',
-                fontSize: '12px',
+                fontSize: '10px',
+                fontWeight: 'bold',
                 display: 'inline-block',
                 fontFamily: 'Inter, Arial, sans-serif'
               }}>
@@ -265,13 +268,13 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Перенос */}
+          {/* Перенос - уменьшена высота на 20px */}
           <div 
             onClick={() => handleAssistantClick('transfer')}
             style={{
               background: '#28301D',
               borderRadius: '16px',
-              padding: '24px 10px',
+              padding: '14px 10px',
               cursor: 'pointer',
               display: 'flex',
               justifyContent: 'space-between',
@@ -304,7 +307,8 @@ function LandingPage() {
                 color: 'white',
                 padding: '8px 12px',
                 borderRadius: '16px',
-                fontSize: '12px',
+                fontSize: '10px',
+                fontWeight: 'bold',
                 display: 'inline-block',
                 fontFamily: 'Inter, Arial, sans-serif'
               }}>

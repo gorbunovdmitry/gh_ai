@@ -41,17 +41,14 @@ function LandingPage() {
         position: 'relative'
       }}>
         <div style={{
-          display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
           maxWidth: '1200px',
           margin: '0 auto'
         }}>
           <div>
-            {/* Лояльность - меньше размер */}
+            {/* Лояльность - больше размер */}
             <div style={{
               color: 'white',
-              fontSize: '12px',
+              fontSize: '14px',
               fontWeight: '400',
               margin: '0 0 4px 0',
               lineHeight: '1'
@@ -59,10 +56,10 @@ function LandingPage() {
               Лояльность
             </div>
             
-            {/* Growth Штурм - с неразрывным пробелом */}
+            {/* Growth Штурм - меньше размер */}
             <h1 style={{
               color: 'white',
-              fontSize: '42px',
+              fontSize: '40px',
               fontWeight: 'bold',
               margin: '0 0 8px 0',
               lineHeight: '1'
@@ -84,25 +81,27 @@ function LandingPage() {
               &nbsp;ИИ-ПОМОЩНИК&nbsp;
             </div>
           </div>
-          
-          {/* Картинка god - увеличена в 2 раза и чуть ниже */}
-          <img 
-            src="/gh_ai/img/god.png" 
-            alt="Бог в помощь" 
-            style={{
-              width: '160px',
-              height: '160px',
-              objectFit: 'contain',
-              marginLeft: '40px',
-              marginTop: '20px'
-            }}
-            onError={(e) => {
-              console.log('Ошибка загрузки изображения god.png');
-              e.target.style.display = 'none';
-            }}
-          />
         </div>
       </div>
+
+      {/* Картинка god - вынесена из контейнера и позиционирована поверх границы */}
+      <img 
+        src="/gh_ai/img/god.png" 
+        alt="Бог в помощь" 
+        style={{
+          position: 'absolute',
+          top: '120px',
+          right: '60px',
+          width: '160px',
+          height: '160px',
+          objectFit: 'contain',
+          zIndex: 10
+        }}
+        onError={(e) => {
+          console.log('Ошибка загрузки изображения god.png');
+          e.target.style.display = 'none';
+        }}
+      />
 
       {/* Cards Container с серым фоном */}
       <div style={{

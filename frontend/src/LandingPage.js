@@ -28,110 +28,229 @@ function LandingPage() {
   };
 
   return (
-    <div className="landing-page">
-      <div className="landing-container">
-        {/* Header */}
-        <div className="landing-header">
-          <div className="loyalty-badge">
-            <span>Лояльность</span>
-          </div>
-          <h1 className="main-title">
-            Growth <span className="highlight">Штурм</span>
+    <div style={{
+      minHeight: '100vh',
+      background: '#2a2a2a',
+      padding: '20px',
+      fontFamily: 'Roboto, Arial, sans-serif',
+      position: 'relative'
+    }}>
+      {/* Header */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        marginBottom: '60px'
+      }}>
+        <div>
+          <h1 style={{
+            color: '#7ed321',
+            fontSize: '48px',
+            fontWeight: 'bold',
+            margin: '0',
+            lineHeight: '1'
+          }}>
+            Штурм
           </h1>
-          <p className="subtitle">ИИ-помощник</p>
-          <div className="help-badge">
-            <span>BTBIT</span>
-            <span>Помощь</span>
+          <p style={{
+            color: '#7ed321',
+            fontSize: '18px',
+            margin: '5px 0 0 0',
+            fontWeight: '300'
+          }}>
+            ИИ-помощник
+          </p>
+        </div>
+        
+        <div style={{
+          background: 'white',
+          color: '#333',
+          padding: '8px 16px',
+          borderRadius: '20px',
+          fontSize: '14px',
+          fontWeight: 'bold'
+        }}>
+          <span style={{ color: 'red' }}>BTBIT</span> Помощь
+        </div>
+      </div>
+
+      {/* Cards Container */}
+      <div style={{
+        maxWidth: '600px',
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px'
+      }}>
+        
+        {/* Стереотипы */}
+        <div 
+          onClick={() => handleAssistantClick('stereotypes')}
+          style={{
+            background: 'linear-gradient(135deg, #7ed321, #5ba816)',
+            borderRadius: '20px',
+            padding: '24px',
+            cursor: 'pointer',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            boxShadow: '0 4px 20px rgba(126, 211, 33, 0.3)'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'translateY(-2px)';
+            e.target.style.boxShadow = '0 8px 30px rgba(126, 211, 33, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.boxShadow = '0 4px 20px rgba(126, 211, 33, 0.3)';
+          }}
+        >
+          <div>
+            <h2 style={{
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              margin: '0 0 8px 0'
+            }}>
+              СТЕРЕОТИПЫ
+            </h2>
+            <div style={{
+              background: 'rgba(0,0,0,0.2)',
+              color: 'white',
+              padding: '8px 12px',
+              borderRadius: '12px',
+              fontSize: '14px',
+              display: 'inline-block'
+            }}>
+              ЭТАП 1. ЧТО ХОРОШО, ЧТО ПЛОХО?
+            </div>
+          </div>
+          <div style={{
+            width: '60px',
+            height: '60px',
+            background: 'rgba(255,255,255,0.2)',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '30px'
+          }}>
+            😊
           </div>
         </div>
 
-        {/* Assistant Cards */}
-        <div className="assistants-container">
-          {/* Стереотипы */}
-          <div 
-            className="assistant-card stereotypes"
-            onClick={() => handleAssistantClick('stereotypes')}
-          >
-            <div className="card-content">
-              <div className="assistant-info">
-                <h2>СТЕРЕОТИПЫ</h2>
-                <p>ЭТАП 1. ЧТО ХОРОШО, ЧТО ПЛОХО?</p>
-              </div>
-              <div className="assistant-emoji">
-                <div className="emoji emoji-surprised">
-                  <div className="emoji-face">
-                    <div className="emoji-horns"></div>
-                    <div className="emoji-eyes">
-                      <div className="eye">
-                        <div className="pupil"></div>
-                      </div>
-                      <div className="eye">
-                        <div className="pupil"></div>
-                      </div>
-                    </div>
-                    <div className="emoji-mouth surprised"></div>
-                  </div>
-                </div>
-              </div>
+        {/* Инверсия */}
+        <div 
+          onClick={() => handleAssistantClick('inversion')}
+          style={{
+            background: 'linear-gradient(135deg, #7ed321, #5ba816)',
+            borderRadius: '20px',
+            padding: '24px',
+            cursor: 'pointer',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            boxShadow: '0 4px 20px rgba(126, 211, 33, 0.3)'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'translateY(-2px)';
+            e.target.style.boxShadow = '0 8px 30px rgba(126, 211, 33, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.boxShadow = '0 4px 20px rgba(126, 211, 33, 0.3)';
+          }}
+        >
+          <div>
+            <h2 style={{
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              margin: '0 0 8px 0'
+            }}>
+              ИНВЕРСИЯ
+            </h2>
+            <div style={{
+              background: 'rgba(0,0,0,0.2)',
+              color: 'white',
+              padding: '8px 12px',
+              borderRadius: '12px',
+              fontSize: '14px',
+              display: 'inline-block'
+            }}>
+              ЭТАП 2. КАК НАКАЗАТЬ?
             </div>
           </div>
+          <div style={{
+            width: '60px',
+            height: '60px',
+            background: 'rgba(255,255,255,0.2)',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '30px'
+          }}>
+            😈
+          </div>
+        </div>
 
-          {/* Инверсия */}
-          <div 
-            className="assistant-card inversion"
-            onClick={() => handleAssistantClick('inversion')}
-          >
-            <div className="card-content">
-              <div className="assistant-info">
-                <h2>ИНВЕРСИЯ</h2>
-                <p>ЭТАП 2. КАК НАКАЗАТЬ?</p>
-              </div>
-              <div className="assistant-emoji">
-                <div className="emoji emoji-devil">
-                  <div className="emoji-face">
-                    <div className="emoji-horns devil"></div>
-                    <div className="emoji-eyes">
-                      <div className="eye red">
-                        <div className="pupil red"></div>
-                      </div>
-                      <div className="eye red">
-                        <div className="pupil red"></div>
-                      </div>
-                    </div>
-                    <div className="emoji-mouth devil"></div>
-                  </div>
-                </div>
-              </div>
+        {/* Перенос */}
+        <div 
+          onClick={() => handleAssistantClick('transfer')}
+          style={{
+            background: 'linear-gradient(135deg, #7ed321, #5ba816)',
+            borderRadius: '20px',
+            padding: '24px',
+            cursor: 'pointer',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+            boxShadow: '0 4px 20px rgba(126, 211, 33, 0.3)'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'translateY(-2px)';
+            e.target.style.boxShadow = '0 8px 30px rgba(126, 211, 33, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.boxShadow = '0 4px 20px rgba(126, 211, 33, 0.3)';
+          }}
+        >
+          <div>
+            <h2 style={{
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              margin: '0 0 8px 0'
+            }}>
+              ПЕРЕНОС
+            </h2>
+            <div style={{
+              background: 'rgba(0,0,0,0.2)',
+              color: 'white',
+              padding: '8px 12px',
+              borderRadius: '12px',
+              fontSize: '14px',
+              display: 'inline-block'
+            }}>
+              ЭТАП 3. ОТКУДА УКРАСТЬ?
             </div>
           </div>
-
-          {/* Перенос */}
-          <div 
-            className="assistant-card transfer"
-            onClick={() => handleAssistantClick('transfer')}
-          >
-            <div className="card-content">
-              <div className="assistant-info">
-                <h2>ПЕРЕНОС</h2>
-                <p>ЭТАП 3. ОТКУДА УКРАСТЬ?</p>
-              </div>
-              <div className="assistant-emoji">
-                <div className="emoji emoji-calm">
-                  <div className="emoji-face">
-                    <div className="emoji-ears"></div>
-                    <div className="emoji-eyes">
-                      <div className="eye sleepy">
-                        <div className="pupil"></div>
-                      </div>
-                      <div className="eye sleepy">
-                        <div className="pupil"></div>
-                      </div>
-                    </div>
-                    <div className="emoji-mouth calm"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div style={{
+            width: '60px',
+            height: '60px',
+            background: 'rgba(255,255,255,0.2)',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '30px'
+          }}>
+            😌
           </div>
         </div>
       </div>

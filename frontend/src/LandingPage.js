@@ -133,10 +133,22 @@ function LandingPage() {
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '30px'
+            justifyContent: 'center'
           }}>
-            😊
+            <img 
+              src="/gh_ai/img/stereotypes.png" 
+              alt="Стереотипы" 
+              style={{
+                width: '50px',
+                height: '50px',
+                objectFit: 'contain'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentNode.innerHTML = '😊';
+                e.target.parentNode.style.fontSize = '30px';
+              }}
+            />
           </div>
         </div>
 
@@ -190,10 +202,22 @@ function LandingPage() {
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '30px'
+            justifyContent: 'center'
           }}>
-            😈
+            <img 
+              src="/gh_ai/img/inversion.png" 
+              alt="Инверсия" 
+              style={{
+                width: '50px',
+                height: '50px',
+                objectFit: 'contain'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentNode.innerHTML = '😈';
+                e.target.parentNode.style.fontSize = '30px';
+              }}
+            />
           </div>
         </div>
 
@@ -247,10 +271,22 @@ function LandingPage() {
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '30px'
+            justifyContent: 'center'
           }}>
-            😌
+            <img 
+              src="/gh_ai/img/transfer.png" 
+              alt="Перенос" 
+              style={{
+                width: '50px',
+                height: '50px',
+                objectFit: 'contain'
+              }}
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentNode.innerHTML = '😌';
+                e.target.parentNode.style.fontSize = '30px';
+              }}
+            />
           </div>
         </div>
       </div>

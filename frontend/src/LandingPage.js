@@ -67,11 +67,11 @@ function LandingPage() {
               Growth&nbsp;Штурм
             </h1>
             
-            {/* ИИ-ПОМОЩНИК - верхний регистр с пробелами */}
+            {/* ИИ-ПОМОЩНИК - еще меньше размер */}
             <div style={{
-              background: '#28301D',
+              background: '#171717',
               color: '#7ED016',
-              fontSize: '12px',
+              fontSize: '10px',
               fontWeight: '600',
               padding: '4px 8px',
               borderRadius: '16px',
@@ -84,18 +84,18 @@ function LandingPage() {
         </div>
       </div>
 
-      {/* Картинка god - вынесена из контейнера и позиционирована поверх границы */}
+      {/* Картинка god - в правом верхнем углу страницы */}
       <img 
         src="/gh_ai/img/god.png" 
         alt="Бог в помощь" 
         style={{
-          position: 'absolute',
-          top: '120px',
-          right: '60px',
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
           width: '160px',
           height: '160px',
           objectFit: 'contain',
-          zIndex: 10
+          zIndex: 1000
         }}
         onError={(e) => {
           console.log('Ошибка загрузки изображения god.png');
@@ -117,13 +117,13 @@ function LandingPage() {
           gap: '20px'
         }}>
           
-          {/* Стереотипы - уменьшена высота на 20px */}
+          {/* Стереотипы - еще меньше высота, больше скругление */}
           <div 
             onClick={() => handleAssistantClick('stereotypes')}
             style={{
               background: '#28301D',
-              borderRadius: '16px',
-              padding: '14px 10px',
+              borderRadius: '40px',
+              padding: '4px 10px',
               cursor: 'pointer',
               display: 'flex',
               justifyContent: 'space-between',
@@ -152,7 +152,7 @@ function LandingPage() {
                 СТЕРЕОТИПЫ
               </h2>
               <div style={{
-                background: '#000',
+                background: '#171717',
                 color: 'white',
                 padding: '8px 12px',
                 borderRadius: '16px',
@@ -165,7 +165,7 @@ function LandingPage() {
               </div>
             </div>
             
-            {/* Изображение с эффектом свечения - больше размер */}
+            {/* Изображение со слабым свечением */}
             <div style={{
               position: 'relative',
               width: '100px',
@@ -179,7 +179,7 @@ function LandingPage() {
                   width: '100px',
                   height: '100px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 10px rgba(126, 208, 22, 0.5))'
+                  filter: 'drop-shadow(0 0 3px rgba(126, 208, 22, 0.2))'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -192,13 +192,13 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Инверсия - уменьшена высота на 20px */}
+          {/* Инверсия - еще меньше высота, больше скругление */}
           <div 
             onClick={() => handleAssistantClick('inversion')}
             style={{
               background: '#28301D',
-              borderRadius: '16px',
-              padding: '14px 10px',
+              borderRadius: '40px',
+              padding: '4px 10px',
               cursor: 'pointer',
               display: 'flex',
               justifyContent: 'space-between',
@@ -227,7 +227,7 @@ function LandingPage() {
                 ИНВЕРСИЯ
               </h2>
               <div style={{
-                background: '#000',
+                background: '#171717',
                 color: 'white',
                 padding: '8px 12px',
                 borderRadius: '16px',
@@ -240,7 +240,7 @@ function LandingPage() {
               </div>
             </div>
             
-            {/* Изображение с эффектом свечения - больше размер */}
+            {/* Изображение со слабым свечением */}
             <div style={{
               position: 'relative',
               width: '100px',
@@ -254,7 +254,7 @@ function LandingPage() {
                   width: '100px',
                   height: '100px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 10px rgba(126, 208, 22, 0.5))'
+                  filter: 'drop-shadow(0 0 3px rgba(126, 208, 22, 0.2))'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -267,13 +267,13 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Перенос - уменьшена высота на 20px */}
+          {/* Перенос - еще меньше высота, больше скругление */}
           <div 
             onClick={() => handleAssistantClick('transfer')}
             style={{
               background: '#28301D',
-              borderRadius: '16px',
-              padding: '14px 10px',
+              borderRadius: '40px',
+              padding: '4px 10px',
               cursor: 'pointer',
               display: 'flex',
               justifyContent: 'space-between',
@@ -302,7 +302,7 @@ function LandingPage() {
                 ПЕРЕНОС
               </h2>
               <div style={{
-                background: '#000',
+                background: '#171717',
                 color: 'white',
                 padding: '8px 12px',
                 borderRadius: '16px',
@@ -315,7 +315,7 @@ function LandingPage() {
               </div>
             </div>
             
-            {/* Изображение с эффектом свечения - больше размер */}
+            {/* Изображение со слабым свечением */}
             <div style={{
               position: 'relative',
               width: '100px',
@@ -329,7 +329,7 @@ function LandingPage() {
                   width: '100px',
                   height: '100px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 10px rgba(126, 208, 22, 0.5))'
+                  filter: 'drop-shadow(0 0 3px rgba(126, 208, 22, 0.2))'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none';

@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Chat.css';
 
-export default function LandingPage() {
+function LandingPage() {
   const navigate = useNavigate();
   
   console.log('LandingPage rendered');
 
-  useEffect(() => {
-    // Аналитика для главной страницы
+  // Аналитика
+  React.useEffect(() => {
     if (window.gtag) {
       window.gtag('event', 'GHShturm_landing_view');
     }
@@ -18,112 +18,125 @@ export default function LandingPage() {
   }, []);
 
   const handleAssistantClick = (assistantType) => {
-    // Аналитика для клика по ассистенту
     if (window.gtag) {
       window.gtag('event', `GHShturm_${assistantType}_click`);
     }
     if (window.ym) {
       window.ym(96171108, 'reachGoal', `GHShturm_${assistantType}_click`);
     }
-    
     navigate(`/${assistantType}`);
   };
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#fafafa',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '20px',
-      fontFamily: 'Roboto, Arial, sans-serif'
-    }}>
-      <div style={{
-        maxWidth: '600px',
-        width: '100%',
-        textAlign: 'left'
-      }}>
-        <div style={{
-          color: '#222',
-          fontSize: '22px',
-          lineHeight: '1.6',
-          marginBottom: '40px',
-          whiteSpace: 'pre-line',
-          fontWeight: '500'
-        }}>
-          Приветствую тебя, участник штурма!
-          {"\n\n"}
-          Эти три ассистента помогут тебе нагенерить самые голововзрывающие идеи!
-          {"\n\n"}
-          Слушай ведущего и дерзай!
+    <div className="landing-page">
+      <div className="landing-container">
+        {/* Header */}
+        <div className="landing-header">
+          <div className="loyalty-badge">
+            <span>Лояльность</span>
+          </div>
+          <h1 className="main-title">
+            Growth <span className="highlight">Штурм</span>
+          </h1>
+          <p className="subtitle">ИИ-помощник</p>
+          <div className="help-badge">
+            <span>BTBIT</span>
+            <span>Помощь</span>
+          </div>
         </div>
-        
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr',
-          gap: '20px',
-          maxWidth: '400px',
-          margin: '0 auto'
-        }}>
-          <button 
-            style={{
-              padding: '20px 24px',
-              border: 'none',
-              borderRadius: '16px',
-              background: '#EF3124',
-              color: '#fff',
-              fontSize: '18px',
-              fontWeight: '500',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              fontFamily: 'Roboto, Arial, sans-serif',
-              boxShadow: '0 4px 12px rgba(239, 49, 36, 0.3)'
-            }}
+
+        {/* Assistant Cards */}
+        <div className="assistants-container">
+          {/* Стереотипы */}
+          <div 
+            className="assistant-card stereotypes"
             onClick={() => handleAssistantClick('stereotypes')}
           >
-            Ассистент по стереотипам
-          </button>
-          
-          <button 
-            style={{
-              padding: '20px 24px',
-              border: 'none',
-              borderRadius: '16px',
-              background: '#EF3124',
-              color: '#fff',
-              fontSize: '18px',
-              fontWeight: '500',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              fontFamily: 'Roboto, Arial, sans-serif',
-              boxShadow: '0 4px 12px rgba(239, 49, 36, 0.3)'
-            }}
+            <div className="card-content">
+              <div className="assistant-info">
+                <h2>СТЕРЕОТИПЫ</h2>
+                <p>ЭТАП 1. ЧТО ХОРОШО, ЧТО ПЛОХО?</p>
+              </div>
+              <div className="assistant-emoji">
+                <div className="emoji emoji-surprised">
+                  <div className="emoji-face">
+                    <div className="emoji-horns"></div>
+                    <div className="emoji-eyes">
+                      <div className="eye">
+                        <div className="pupil"></div>
+                      </div>
+                      <div className="eye">
+                        <div className="pupil"></div>
+                      </div>
+                    </div>
+                    <div className="emoji-mouth surprised"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Инверсия */}
+          <div 
+            className="assistant-card inversion"
             onClick={() => handleAssistantClick('inversion')}
           >
-            Ассистент по инверсии
-          </button>
-          
-          <button 
-            style={{
-              padding: '20px 24px',
-              border: 'none',
-              borderRadius: '16px',
-              background: '#EF3124',
-              color: '#fff',
-              fontSize: '18px',
-              fontWeight: '500',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-              fontFamily: 'Roboto, Arial, sans-serif',
-              boxShadow: '0 4px 12px rgba(239, 49, 36, 0.3)'
-            }}
+            <div className="card-content">
+              <div className="assistant-info">
+                <h2>ИНВЕРСИЯ</h2>
+                <p>ЭТАП 2. КАК НАКАЗАТЬ?</p>
+              </div>
+              <div className="assistant-emoji">
+                <div className="emoji emoji-devil">
+                  <div className="emoji-face">
+                    <div className="emoji-horns devil"></div>
+                    <div className="emoji-eyes">
+                      <div className="eye red">
+                        <div className="pupil red"></div>
+                      </div>
+                      <div className="eye red">
+                        <div className="pupil red"></div>
+                      </div>
+                    </div>
+                    <div className="emoji-mouth devil"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Перенос */}
+          <div 
+            className="assistant-card transfer"
             onClick={() => handleAssistantClick('transfer')}
           >
-            Ассистент по переносу
-          </button>
+            <div className="card-content">
+              <div className="assistant-info">
+                <h2>ПЕРЕНОС</h2>
+                <p>ЭТАП 3. ОТКУДА УКРАСТЬ?</p>
+              </div>
+              <div className="assistant-emoji">
+                <div className="emoji emoji-calm">
+                  <div className="emoji-face">
+                    <div className="emoji-ears"></div>
+                    <div className="emoji-eyes">
+                      <div className="eye sleepy">
+                        <div className="pupil"></div>
+                      </div>
+                      <div className="eye sleepy">
+                        <div className="pupil"></div>
+                      </div>
+                    </div>
+                    <div className="emoji-mouth calm"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
-} 
+}
+
+export default LandingPage; 

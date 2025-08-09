@@ -34,18 +34,21 @@ function LandingPage() {
       fontFamily: 'Inter, Arial, sans-serif',
       position: 'relative'
     }}>
-      {/* Header с черным фоном */}
+      {/* Header с темным фоном */}
       <div style={{
-        background: '#000',
+        background: '#121212',
         padding: '50px 20px 30px 20px',
         position: 'relative'
       }}>
         <div style={{
           maxWidth: '1200px',
-          margin: '0 auto'
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between'
         }}>
           <div>
-            {/* Лояльность - больше размер */}
+            {/* Лояльность */}
             <div style={{
               color: 'white',
               fontSize: '14px',
@@ -56,10 +59,10 @@ function LandingPage() {
               Лояльность
             </div>
             
-            {/* Growth Штурм - меньше размер */}
+            {/* Growth Штурм - уменьшен на 4px */}
             <h1 style={{
               color: 'white',
-              fontSize: '40px',
+              fontSize: '36px',
               fontWeight: 'bold',
               margin: '0 0 8px 0',
               lineHeight: '1'
@@ -67,11 +70,11 @@ function LandingPage() {
               Growth&nbsp;Штурм
             </h1>
             
-            {/* ИИ-ПОМОЩНИК - еще меньше размер */}
+            {/* ИИ-ПОМОЩНИК - цвет фона как у кнопок, шрифт на 1 меньше */}
             <div style={{
-              background: '#171717',
+              background: '#28301D',
               color: '#7ED016',
-              fontSize: '10px',
+              fontSize: '9px',
               fontWeight: '600',
               padding: '4px 8px',
               borderRadius: '16px',
@@ -81,27 +84,24 @@ function LandingPage() {
               &nbsp;ИИ-ПОМОЩНИК&nbsp;
             </div>
           </div>
+
+          {/* Картинка god - справа от текста Growth Штурм */}
+          <img 
+            src="/gh_ai/img/god.png" 
+            alt="Бог в помощь" 
+            style={{
+              width: '120px',
+              height: '120px',
+              objectFit: 'contain',
+              marginLeft: '20px'
+            }}
+            onError={(e) => {
+              console.log('Ошибка загрузки изображения god.png');
+              e.target.style.display = 'none';
+            }}
+          />
         </div>
       </div>
-
-      {/* Картинка god - в правом верхнем углу страницы */}
-      <img 
-        src="/gh_ai/img/god.png" 
-        alt="Бог в помощь" 
-        style={{
-          position: 'fixed',
-          top: '20px',
-          right: '20px',
-          width: '160px',
-          height: '160px',
-          objectFit: 'contain',
-          zIndex: 1000
-        }}
-        onError={(e) => {
-          console.log('Ошибка загрузки изображения god.png');
-          e.target.style.display = 'none';
-        }}
-      />
 
       {/* Cards Container с серым фоном */}
       <div style={{
@@ -117,12 +117,12 @@ function LandingPage() {
           gap: '20px'
         }}>
           
-          {/* Стереотипы - еще меньше высота, больше скругление */}
+          {/* Стереотипы - скругление 25px */}
           <div 
             onClick={() => handleAssistantClick('stereotypes')}
             style={{
               background: '#28301D',
-              borderRadius: '40px',
+              borderRadius: '25px',
               padding: '4px 10px',
               cursor: 'pointer',
               display: 'flex',
@@ -165,7 +165,7 @@ function LandingPage() {
               </div>
             </div>
             
-            {/* Изображение со слабым свечением */}
+            {/* Изображение с еще более слабым свечением */}
             <div style={{
               position: 'relative',
               width: '100px',
@@ -179,7 +179,7 @@ function LandingPage() {
                   width: '100px',
                   height: '100px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 3px rgba(126, 208, 22, 0.2))'
+                  filter: 'drop-shadow(0 0 1px rgba(126, 208, 22, 0.1))'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -192,12 +192,12 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Инверсия - еще меньше высота, больше скругление */}
+          {/* Инверсия - скругление 25px */}
           <div 
             onClick={() => handleAssistantClick('inversion')}
             style={{
               background: '#28301D',
-              borderRadius: '40px',
+              borderRadius: '25px',
               padding: '4px 10px',
               cursor: 'pointer',
               display: 'flex',
@@ -240,7 +240,7 @@ function LandingPage() {
               </div>
             </div>
             
-            {/* Изображение со слабым свечением */}
+            {/* Изображение с еще более слабым свечением */}
             <div style={{
               position: 'relative',
               width: '100px',
@@ -254,7 +254,7 @@ function LandingPage() {
                   width: '100px',
                   height: '100px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 3px rgba(126, 208, 22, 0.2))'
+                  filter: 'drop-shadow(0 0 1px rgba(126, 208, 22, 0.1))'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -267,12 +267,12 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* Перенос - еще меньше высота, больше скругление */}
+          {/* Перенос - скругление 25px */}
           <div 
             onClick={() => handleAssistantClick('transfer')}
             style={{
               background: '#28301D',
-              borderRadius: '40px',
+              borderRadius: '25px',
               padding: '4px 10px',
               cursor: 'pointer',
               display: 'flex',
@@ -315,7 +315,7 @@ function LandingPage() {
               </div>
             </div>
             
-            {/* Изображение со слабым свечением */}
+            {/* Изображение с еще более слабым свечением */}
             <div style={{
               position: 'relative',
               width: '100px',
@@ -329,7 +329,7 @@ function LandingPage() {
                   width: '100px',
                   height: '100px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 3px rgba(126, 208, 22, 0.2))'
+                  filter: 'drop-shadow(0 0 1px rgba(126, 208, 22, 0.1))'
                 }}
                 onError={(e) => {
                   e.target.style.display = 'none';

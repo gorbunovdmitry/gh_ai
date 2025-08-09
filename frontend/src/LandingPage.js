@@ -136,7 +136,7 @@ function LandingPage() {
             justifyContent: 'center'
           }}>
             <img 
-              src="/gh_ai/img/stereotypes.png" 
+              src="/gh_ai/img/Стереотипы.png" 
               alt="Стереотипы" 
               style={{
                 width: '50px',
@@ -205,7 +205,7 @@ function LandingPage() {
             justifyContent: 'center'
           }}>
             <img 
-              src="/gh_ai/img/inversion.png" 
+              src="/gh_ai/img/Инверсия.png" 
               alt="Инверсия" 
               style={{
                 width: '50px',
@@ -274,7 +274,7 @@ function LandingPage() {
             justifyContent: 'center'
           }}>
             <img 
-              src="/gh_ai/img/transfer.png" 
+              src="/gh_ai/img/Перенос.png" 
               alt="Перенос" 
               style={{
                 width: '50px',

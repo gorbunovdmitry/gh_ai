@@ -70,11 +70,11 @@ function LandingPage() {
               Growth&nbsp;Штурм
             </h1>
             
-            {/* ИИ-ПОМОЩНИК - цвет фона как у кнопок, шрифт на 1 меньше */}
+            {/* ИИ-ПОМОЩНИК - цвет фона как у кнопок, размер увеличен на 2px */}
             <div style={{
               background: '#28301D',
               color: '#7ED016',
-              fontSize: '9px',
+              fontSize: '11px',
               fontWeight: '600',
               padding: '4px 8px',
               borderRadius: '16px',

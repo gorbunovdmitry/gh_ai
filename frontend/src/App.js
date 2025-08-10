@@ -8,7 +8,7 @@ function App() {
   console.log('App rendered, current pathname:', window.location.pathname);
   
   return (
-    <BrowserRouter basename="/gh_ai">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/stereotypes" element={<ChatPage />} />

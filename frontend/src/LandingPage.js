@@ -87,7 +87,7 @@ function LandingPage() {
 
           {/* Картинка god - справа от текста Growth Штурм */}
           <img 
-            src="/gh_ai/img/god.png" 
+            src="/img/god.png" 
             alt="Бог в помощь" 
             style={{
               width: '120px',
@@ -173,7 +173,7 @@ function LandingPage() {
               paddingRight: '14px'
             }}>
               <img 
-                src="/gh_ai/img/Стереотипы.png" 
+                src="/img/Стереотипы.png" 
                 alt="Стереотипы" 
                 style={{
                   width: '100px',
@@ -248,7 +248,7 @@ function LandingPage() {
               paddingRight: '14px'
             }}>
               <img 
-                src="/gh_ai/img/Инверсия.png" 
+                src="/img/Инверсия.png" 
                 alt="Инверсия" 
                 style={{
                   width: '100px',
@@ -323,7 +323,7 @@ function LandingPage() {
               paddingRight: '14px'
             }}>
               <img 
-                src="/gh_ai/img/Перенос.png" 
+                src="/img/Перенос.png" 
                 alt="Перенос" 
                 style={{
                   width: '100px',
